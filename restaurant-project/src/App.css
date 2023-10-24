@@ -1,0 +1,176 @@
+.home{
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+.ant-layout-header {
+    padding: 0;
+
+}
+.navigation {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgb(246, 221, 187);
+
+}
+
+.button-style{
+    background-color: rgb(241, 212, 182);
+    border: #c09a66 1px solid;
+    margin: 24px 0 24px 0;
+}
+.button-style-card{
+    background-color: rgb(222, 188, 151);
+    border: #211d13 1px solid;
+}
+.button-style-get-bill{
+    background-color: rgb(222, 188, 151);
+    border: #211d13 1px solid;
+}
+
+.order-bill{
+    display: flex;
+    flex-direction: column;
+}
+.order-bill-table{
+    margin: 10px 0 20px 0;
+}
+.order-bill-total{
+    font-size: 32px;
+    color: #0497ea;
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+}
+.order-bill-options{
+    justify-content: center;
+    margin-top: 50px;
+}
+.order-bill-pay{
+    font-size: 32px;
+    margin: 0 auto;
+    padding: 30px;
+}
+.order-bill-pay button{
+    font-weight: bold;
+    background-color: #ffefd1;
+}
+.dish-image{
+    max-width: 260px;
+    width: 100%;
+}
+.dish-list-button{
+    width: 120px;
+}
+.dish-buttons{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.dish-list-button-details{
+    width: 120px;
+
+    background-color: #aed8e5;
+}
+
+.input-search-dishes {
+    max-width: 390px;
+    width: 100%;
+    margin: 10px 0 40px 0;
+}
+
+.card-dish-detail {
+    max-width: 860px;
+    width: 100%;
+}
+.card-dish-detail-description {
+    width: 550px;
+    margin: 0 auto;
+    text-align: left;
+}
+.card-dish-detail-price{
+    margin: 16px auto;
+    border: 2px solid #c09a66;
+    border-radius: 10px;
+    max-width: 280px;
+    width: 100%;
+    padding: 1px 4px 1px 4px;
+}
+.card-dish-detail-price p{
+    font-style: italic;
+    font-weight: bolder;
+}
+.card-dish-detail img {
+    width: 480px;
+
+}
+.card-dish-detail-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 18px;
+}
+.card-dish-detail-tags p{
+    padding-right: 5px;
+    font-style: italic;
+
+}
+.payment{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.payment-information{
+    padding: 50px;
+    border-radius: 4px;
+}
+.waiter-button-action{
+    width: 90px;
+}
+.waiter-details-fullname{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.waiter-details-firstname{
+    margin-right: 7px;
+}
+.waiter-details-photo{
+    max-width: 280px;
+    width: 100%;
+}
+.waiter-details-description{
+    width: 550px;
+    text-align: left;
+    margin: 30px 0 10px 0;
+}
+
+
+
+
+.ant-card .ant-card-head {
+    background-color: #c09a66;
+}
+.ant-card-body {
+    background-color: rgb(248, 224, 205);
+    text-align: center;
+}
+.ant-table-content .ant-table-thead .ant-table-cell
+{ background-color: #c09a66; }
+
+.ant-table-content {
+    background-color: rgb(241, 212, 182);
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+    background: rgb(208, 190, 177) !important;
+}
+body{
+    background: #fcfcf3;
+}
+.main-content {
+    background: #fcfcf3;
+
+}
