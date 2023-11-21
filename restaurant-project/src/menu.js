@@ -1,5 +1,4 @@
 import { NavLink} from "react-router-dom";
-import { SketchOutlined}  from '@ant-design/icons'
 import './App.css'
 const active = ({isActive}) => isActive ? 'active' : ''
 
