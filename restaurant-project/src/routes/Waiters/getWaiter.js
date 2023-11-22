@@ -53,13 +53,10 @@ export function getWaiter(dispatch, navigate) {
                                     )
                                 }
                             ]
-
-                        }}
-                    >
-                        <a >
+                        }}>
+                        <a>
                             <Space>
                                 <Button>Actions<DownOutlined /></Button>
-
                             </Space>
                         </a>
                     </Dropdown>
