@@ -18,6 +18,16 @@ export default function OrderForm() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    useEffect(() => {
+        if (id && !orderEdit?.id) {
+            dispatch(fetchOne(id))
+        }
+    }, [dispatch, id, orderEdit?.id])
+
+    useEffect(() => {
+        dispatch(fetchNewOrders())
+    }, [dispatch])
+
     function onFormSubmit(value) {
         let i = 1
         const dishList = value.dishes.map((dish) => {
@@ -35,16 +45,6 @@ export default function OrderForm() {
         dispatch(save(order))
         navigate('/')
     }
-
-    useEffect(() => {
-        if (id && !orderEdit?.id) {
-            dispatch(fetchOne(id))
-        }
-    }, [dispatch, id, orderEdit?.id])
-
-    useEffect(() => {
-        dispatch(fetchNewOrders())
-    }, [dispatch])
 
     if (id && !orderEdit?.id) {
         return <h1>Loading...</h1>
