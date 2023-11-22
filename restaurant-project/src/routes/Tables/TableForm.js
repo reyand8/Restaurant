@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {Button, Row, Col, Form, Input} from 'antd'
-import { useEffect } from 'react'
+import {Button, Row, Col, Form, Input, Space, Spin} from 'antd'
+import React, { useEffect } from 'react'
 
 import {selectTables, selectTableEdit} from "../../store/selectors"
 import {fetchOne, save} from '../../store/actions/table'
@@ -31,7 +31,15 @@ export default function TableForm () {
     }
 
     if (id && !tableEdit?.id) {
-        return <div>Loading...</div>
+        return (
+            <div className='data-loading'>
+                <Space>
+                    <Spin tip="Loading" size="large">
+                        <div className="loading-information" />
+                    </Spin>
+                </Space>
+            </div>
+        )
     }
 
     return (

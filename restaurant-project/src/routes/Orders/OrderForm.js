@@ -1,6 +1,6 @@
-import { Form, Select, Space, Button, Input, Row, Col } from 'antd'
+import {Form, Select, Space, Button, Input, Row, Col, Spin} from 'antd'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -47,7 +47,15 @@ export default function OrderForm() {
     }
 
     if (id && !orderEdit?.id) {
-        return <h1>Loading...</h1>
+        return (
+            <div className='data-loading'>
+                <Space>
+                    <Spin tip="Loading" size="large">
+                        <div className="loading-information" />
+                    </Spin>
+                </Space>
+            </div>
+        )
     }
 
     return (

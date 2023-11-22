@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {Button, Row, Col, Form, Input} from 'antd'
-import { useEffect } from 'react'
+import {Button, Row, Col, Form, Input, Space, Spin} from 'antd'
+import React, { useEffect } from 'react'
 import {fetchOne, save} from '../../store/actions/waiter'
 import {selectWaiterEdit} from "../../store/selectors";
 import '../../App.css'
@@ -28,7 +28,15 @@ export default function ContactForm () {
     }
 
     if (id && !waiterEdit?.id) {
-        return <div>Loading...</div>
+        return (
+            <div className='data-loading'>
+                <Space>
+                    <Spin tip="Loading" size="large">
+                        <div className="loading-information" />
+                    </Spin>
+                </Space>
+            </div>
+        )
     }
 
     return (

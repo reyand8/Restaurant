@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {Button, Row, Col, Form, Input, Upload, Tag} from 'antd'
-import { useEffect } from 'react'
+import {Button, Row, Col, Form, Input, Upload, Space, Spin} from 'antd'
+import React, { useEffect } from 'react'
 
 import {fetchOne, save} from '../../store/actions/dish'
 import { selectDishEdit} from "../../store/selectors"
@@ -9,7 +9,7 @@ import '../../App.css'
 import {PlusOutlined} from "@ant-design/icons";
 
 const PRICE_TEMPLATE = /^\d{1,3}$/
-import DishFormTags from './DishFormTags'
+
 
 
 export default function DishForm () {
@@ -42,7 +42,15 @@ export default function DishForm () {
     }
 
     if (id && !dishEdit?.id) {
-        return <div>Loading...</div>
+        return (
+            <div className='data-loading'>
+                <Space>
+                    <Spin tip="Loading" size="large">
+                        <div className="loading-information" />
+                    </Spin>
+                </Space>
+            </div>
+        )
     }
 
     return (
@@ -129,20 +137,7 @@ export default function DishForm () {
                                        max: 10,
                                        message: 'Your tag can not be longer than 10 symbols!',
                                    },
-                               ]}
-                        >
-                                <div className=''>
-                                    {/*{dishEdit.tags.split(' ').map((tag) => {*/}
-                                    {/*    return(*/}
-                                    {/*        <Tag color="cyan" key={tag}>*/}
-                                    {/*            {tag.toUpperCase()}*/}
-                                    {/*        </Tag>*/}
-                                    {/*    )*/}
-
-
-                                    {/*})}*/}
-                                <DishFormTags/>
-                                </div>
+                               ]}>
                     </Form.Item>
                     <Form.Item
                         wrapperCol={{ offset: 8, span: 14, }}>

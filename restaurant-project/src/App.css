@@ -117,12 +117,12 @@
     font-style: italic;
 
 }
-.payment{
+.data-loading{
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
-.payment-information{
+.loading-information{
     padding: 50px;
     border-radius: 4px;
 }
