@@ -33,6 +33,5 @@ export function fetchNewOrders() {
                 dispatch(setWaiterList(res[1]))
                 dispatch(setDishList(res[2]))
             })
-
     }
 }

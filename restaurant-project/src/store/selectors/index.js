@@ -33,7 +33,6 @@ export const selectAllOrders = createSelector(
             waiter: waitersMap[order.waiterId]
 
         })
-
         )
     }
 )
@@ -68,24 +67,4 @@ export const selectAction = createSelector(
         }
     }
 )
-// export const selectAllWaiters = createSelector(
-//     selectWaiters,
-//     selectTables,
-//     selectOrders,
-//     (waiters, tables, orders) => {
-//
-//         const tablesMap = tables.reduce((acc, tables) => {
-//             acc[tables.id] = tables
-//             return acc
-//         }, {})
-//         const ordersMap = orders.reduce((acc, order) => {
-//             acc[waiter.id] = waiter
-//             return acc
-//         }, {})
-//         return orders.map((order) => ({
-//             ...waiters,
-//             table: tablesMap[order.tableId],
-//             order: waitersMap[order.waiterId]
-//         }))
-//     }
-// )
+

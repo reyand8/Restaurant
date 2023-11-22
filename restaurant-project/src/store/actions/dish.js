@@ -62,6 +62,7 @@ export function createEditDish(dish) {
 export function clearEditDish() {
     return{ type: ACTION_CLEAR_EDIT_DISH}
 }
+
 export function updateList(dish) {
     return{ type: ACTION_UPDATE_LIST, payload: dish}
 }

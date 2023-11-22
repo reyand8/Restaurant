@@ -20,11 +20,11 @@ function App() {
                 <Layout.Content className='main-content'>
                     <Routes>
                         <Route path='/' element={<Home />}/>
-                        <Route path='/waiters/*' element={<WaiterRoutes />}/>
-                        <Route path='/dishes/*' element={<DishRoutes />}/>
+                        <Route path='/waiters/*' element={<WaiterRoutes/>}/>
+                        <Route path='/dishes/*' element={<DishRoutes/>}/>
                         <Route path='/tables/*' element={<TableRoutes/>}/>
-                        <Route path='/orders/*' element={<OrderRoutes />}/>
-                        <Route path='/*' element={<NotFound />}/>
+                        <Route path='/orders/*' element={<OrderRoutes/>}/>
+                        <Route path='/*' element={<NotFound/>}/>
                     </Routes>
                 </Layout.Content>
             </Layout>

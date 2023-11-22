@@ -43,6 +43,7 @@ export function fetchOneBill(id) {
         })
     }
 }
+
 export function fetchListBill(id) {
     return (dispatch) => {
         OrderApi.getList(id).then((order) => {
@@ -50,6 +51,7 @@ export function fetchListBill(id) {
         })
     }
 }
+
 export function save(order) {
     return (dispatch) => {
         if(order.id) {
@@ -72,7 +74,6 @@ export function create(order) {
 export function remove(order) {
     return{ type: ACTION_DELETE_ORDER, payload: order}
 }
-
 
 export function setEditOrder(order) {
     return{ type: ACTION_SET_EDIT_ORDER, payload: order}

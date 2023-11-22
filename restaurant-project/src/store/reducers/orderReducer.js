@@ -16,8 +16,8 @@ export const DEFAULT_ORDER = {
 
 const initialState ={
     list : [],
-    orderEdit : DEFAULT_ORDER,
-    orderBill : DEFAULT_ORDER,
+    orderEdit: DEFAULT_ORDER,
+    orderBill: DEFAULT_ORDER,
 }
 
 export default function orderReducer(state = initialState, { type, payload }) {
@@ -47,10 +47,10 @@ export default function orderReducer(state = initialState, { type, payload }) {
         }
         case ACTION_UPDATE_LIST: {
             const updateList = state.list.map(order => order.id === payload.id ? payload : order)
-            return {...state, list: updateList, orderEdit : DEFAULT_ORDER }
+            return {...state, list: updateList, orderEdit: DEFAULT_ORDER }
         }
         case ACTION_SET_ORDER_LIST:
-            return { ...state, list: payload, orderEdit : DEFAULT_ORDER, orderBill: DEFAULT_ORDER }
+            return { ...state, list: payload, orderEdit: DEFAULT_ORDER, orderBill: DEFAULT_ORDER }
         default: return state
     }
 }
