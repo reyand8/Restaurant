@@ -14,7 +14,6 @@ export default function WaiterList () {
     useEffect(() => {
         dispatch(fetchList())
     }, [dispatch])
-    console.log(list)
     return (
         <div >
             <Row  justify='center'>
