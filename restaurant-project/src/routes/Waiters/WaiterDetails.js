@@ -7,7 +7,7 @@ import {Button, Col,Row, Space} from "antd";
 import {ArrowLeftOutlined} from "@ant-design/icons";
 import GetWaiterDetails from "./GetWaiterDetails";
 
-export default function ContactForm () {
+export default function WaiterDetails () {
     const waiterEdit = useSelector(selectWaiterEdit)
     let { id } = useParams()
 
