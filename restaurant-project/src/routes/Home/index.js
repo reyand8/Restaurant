@@ -1,7 +1,7 @@
-import '../../App.css'
+import '../../App.css';
 export default function Home () {
     return (
-        <div className='home'>
+        <div className="home">
             <h1>Start</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus, odio eget egestas vulputate,
                 orci nulla condimentum dolor, sit amet faucibus velit velit eget odio. In feugiat neque quis nulla
@@ -23,5 +23,5 @@ export default function Home () {
                 ante. Donec eu fermentum felis. Vestibulum vel neque malesuada, tristique odio non, sollicitudin orci.
                 Duis dignissim est auctor cursus varius.</p>
         </div>
-    )
+    );
 }

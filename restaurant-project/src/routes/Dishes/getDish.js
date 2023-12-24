@@ -1,21 +1,21 @@
-import {Button, Space, Tag} from "antd"
-import { EditOutlined, DeleteOutlined}  from '@ant-design/icons'
-import {deleteDish, createEditDish, clearEditDish} from "../../store/actions/dish"
-import '../../App.css'
-import './DishList'
+import {Button, Space, Tag} from 'antd';
+import { EditOutlined, DeleteOutlined}  from '@ant-design/icons';
+import {deleteDish, createEditDish, clearEditDish} from '../../store/actions/dish';
+import '../../App.css';
+import './DishList';
 export default function getDish(dispatch, navigate, searchedDish) {
 
 
     function onDeleteBtnClick(dish) {
-        dispatch(deleteDish(dish))
+        dispatch(deleteDish(dish));
     }
     function onEditBtnClick(dish) {
-        dispatch(createEditDish(dish))
-        navigate(`/dishes/${dish.id}/edit/`)
+        dispatch(createEditDish(dish));
+        navigate(`/dishes/${dish.id}/edit/`);
     }
     function onDetailBtnClick(dish){
-        dispatch(clearEditDish())
-        navigate(`/dishes/${dish.id}/details/`)
+        dispatch(clearEditDish());
+        navigate(`/dishes/${dish.id}/details/`);
     }
 
     return [
@@ -33,8 +33,8 @@ export default function getDish(dispatch, navigate, searchedDish) {
                         .includes(value.toLowerCase()) ||
                     String(record.price).toLowerCase()
                         .includes(value.toLowerCase())
-                )
-            }
+                );
+            },
         },
         {
             title: 'Image',
@@ -42,7 +42,7 @@ export default function getDish(dispatch, navigate, searchedDish) {
             key: 'description',
             align: 'center',
             render: (_, image) =>
-                <img alt='img-food' className='dish-image' src={image.image}/>
+                <img alt="img-food" className="dish-image" src={image.image}/>,
 
         },
         {
@@ -54,10 +54,10 @@ export default function getDish(dispatch, navigate, searchedDish) {
                 <>
                     {tags.split(' ').map((tag) => {
                         return (
-                                <Tag color="cyan" key={tag}>
-                                    {tag.toUpperCase()}
-                                </Tag>
-                            )
+                            <Tag color="cyan" key={tag}>
+                                {tag.toUpperCase()}
+                            </Tag>
+                        );
                     })}
                 </>
             ),
@@ -76,20 +76,32 @@ export default function getDish(dispatch, navigate, searchedDish) {
             dataIndex: 'price',
             key: 'price',
             width: 100,
-            align: 'center'
+            align: 'center',
         },
         {
             title: 'Actions',
             key: 'actions',
             align: 'center',
             render: (_, dish) => (
-                <Space wrap className='dish-buttons'>
-                    <Button className='dish-list-button' danger onClick={() => onDeleteBtnClick(dish)}> <DeleteOutlined />Delete</Button>
-                    <Button className='dish-list-button' onClick={() => onEditBtnClick(dish)}> <EditOutlined />Edit</Button>
-                    <Button className='dish-list-button-details' onClick={() => onDetailBtnClick(dish)}>Read more</Button>
+                <Space wrap className="dish-buttons">
+                    <Button className="dish-list-button"
+                            danger
+                            onClick={() => onDeleteBtnClick(dish)}>
+                        <DeleteOutlined />Delete
+                    </Button>
+                    <Button className="dish-list-button"
+                            onClick={() =>
+                                onEditBtnClick(dish)}>
+                        <EditOutlined />Edit
+                    </Button>
+                    <Button className="dish-list-button-details"
+                            onClick={() =>
+                                onDetailBtnClick(dish)}>
+                        Read more
+                    </Button>
                 </Space>
             ),
 
         },
-    ]
+    ];
 }

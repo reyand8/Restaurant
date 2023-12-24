@@ -1,15 +1,15 @@
 import { Button, Space } from 'antd';
-import {clearBill, clearEditOrder} from "../../store/actions/order";
-import '../../App.css'
+import {clearBill, clearEditOrder} from '../../store/actions/order';
+import '../../App.css';
 export function getOrder (dispatch, navigate) {
     function onBillBtnClick(order) {
-        navigate(`/orders/${order.id}/bill`)
-        dispatch(clearBill())
+        navigate(`/orders/${order.id}/bill`);
+        dispatch(clearBill());
     }
 
     function onEditBtnClick(order) {
-        navigate(`/orders/${order.id}/edit`)
-        dispatch(clearEditOrder())
+        navigate(`/orders/${order.id}/edit`);
+        dispatch(clearEditOrder());
     }
 
     return [
@@ -35,10 +35,10 @@ export function getOrder (dispatch, navigate) {
             key: 'actions',
             render: (_, order) => (
                 <Space wrap>
-                    <Button className='button-style-get-bill' onClick={() => onBillBtnClick(order)}>Get Bill</Button>
+                    <Button className="button-style-get-bill" onClick={() => onBillBtnClick(order)}>Get Bill</Button>
                     <Button onClick={() => onEditBtnClick(order)}>Edit</Button>
                 </Space>
-            )
+            ),
         },
-    ]
+    ];
 }

@@ -1,11 +1,11 @@
-import { OrderApi } from '../../api/OrderApi'
-import { TableApi } from '../../api/TableApi'
-import { WaiterApi } from '../../api/WaiterApi'
-import {DishApi} from "../../api/DishApi"
-import { setOrderList } from './order'
-import { setTableList } from './table'
-import { setWaiterList } from './waiter'
-import { setDishList } from "./dish"
+import { OrderApi } from '../../api/OrderApi';
+import { TableApi } from '../../api/TableApi';
+import { WaiterApi } from '../../api/WaiterApi';
+import {DishApi} from '../../api/DishApi';
+import { setOrderList } from './order';
+import { setTableList } from './table';
+import { setWaiterList } from './waiter';
+import { setDishList } from './dish';
 
 export function fetchCommonOrders () {
     return (dispatch) => {
@@ -14,11 +14,11 @@ export function fetchCommonOrders () {
             TableApi.getList(),
             WaiterApi.getList(),
         ]).then((res) => {
-            dispatch(setOrderList(res[0]))
-            dispatch(setTableList(res[1]))
-            dispatch(setWaiterList(res[2]))
-        })
-    }
+            dispatch(setOrderList(res[0]));
+            dispatch(setTableList(res[1]));
+            dispatch(setWaiterList(res[2]));
+        });
+    };
 }
 
 export function fetchNewOrders() {
@@ -29,9 +29,9 @@ export function fetchNewOrders() {
             DishApi.getList(),
         ])
             .then((res) => {
-                dispatch(setTableList(res[0]))
-                dispatch(setWaiterList(res[1]))
-                dispatch(setDishList(res[2]))
-            })
-    }
+                dispatch(setTableList(res[0]));
+                dispatch(setWaiterList(res[1]));
+                dispatch(setDishList(res[2]));
+            });
+    };
 }
