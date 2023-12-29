@@ -22,12 +22,12 @@ export default function GetTable({table}) {
             size="big"
             title={<h3>Table: {table.number}</h3>}
             extra={<Button className="button-style-card"
-                           onClick={onEditBtnClick}>
+                onClick={onEditBtnClick}>
                 <EditOutlined/>Edit
             </Button>}
             style={{width: 330}}>
             <Button className="button-style-card-danger"
-                    danger onClick={onDeleteClick}>
+                danger onClick={onDeleteClick}>
                 <DeleteOutlined/>Delete
             </Button>
         </Card>

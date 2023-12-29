@@ -1,5 +1,5 @@
 import { DishApi } from '../../api/DishApi';
-import {ACTION_CLEAR_EDIT_ORDER} from './order';
+
 
 export const ACTION_CREATE_DISH ='ACTION_CREATE_DISH';
 export const ACTION_CREATE_EDIT_DISH ='ACTION_CREATE_EDIT_DISH';

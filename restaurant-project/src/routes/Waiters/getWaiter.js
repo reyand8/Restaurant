@@ -54,11 +54,11 @@ export function getWaiter(dispatch, navigate) {
                             },
                         ],
                         }}>
-                        <a>
+                        <div>
                             <Space>
                                 <Button>Actions<DownOutlined /></Button>
                             </Space>
-                        </a>
+                        </div>
                     </Dropdown>
                 </Space>
             ),
