@@ -21,9 +21,9 @@ export default function WaiterDetails () {
 
     return (
         <Row justify="center">
-            <Col span={8}>
+            <Col span={8} className="waiter-details">
                 <Button className="button-style">
-                    <Link to="/dishes"><ArrowLeftOutlined /> Return</Link>
+                    <Link to="/waiters"><ArrowLeftOutlined /> Return</Link>
                 </Button>
                 <Space align="center" wrap direction="horizontal" size="small">
                     <GetWaiterDetails waiterEdit={waiterEdit} key={waiterEdit.id}/>

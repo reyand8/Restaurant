@@ -7,7 +7,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint -c .eslintrc --ext .js ./src/*",
+    "lint": "eslint -c .eslintrc --ext .js ./src/",
     "lint:fix": "npm run lint -- --fix"
   },
   "author": "",

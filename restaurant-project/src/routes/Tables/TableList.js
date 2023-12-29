@@ -24,7 +24,7 @@ export default function Tables () {
             </Row>
             <Row justify="center">
                 <Col span={17}>
-                    <Space align="center" wrap direction="horizontal" size="small">
+                    <Space align="center" className="card-table" direction="horizontal" size="small">
                         {list.map(table => <GetTable table={table} key={table.id} />)}
                     </Space>
                 </Col>

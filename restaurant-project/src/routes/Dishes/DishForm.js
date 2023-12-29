@@ -7,6 +7,7 @@ import {fetchOne, save} from '../../store/actions/dish';
 import { selectDishEdit} from '../../store/selectors';
 import '../../App.css';
 import {PlusOutlined} from '@ant-design/icons';
+const { TextArea } = Input;
 
 const PRICE_TEMPLATE = /^\d{1,3}$/;
 
@@ -93,7 +94,7 @@ export default function DishForm () {
                                 message: 'Please input dish description!',
                             },
                         ]}>
-                        <Input placeholder="Description"/>
+                        <TextArea placeholder="Description"/>
                     </Form.Item>
                     <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
                         <Upload action="/" listType="picture-card" disabled>
@@ -139,6 +140,7 @@ export default function DishForm () {
                                 message: 'Your tag can not be longer than 10 symbols!',
                             },
                         ]}>
+                        <Input placeholder="Tag" />
                     </Form.Item>
                     <Form.Item
                         wrapperCol={{ offset: 8, span: 14 }}>

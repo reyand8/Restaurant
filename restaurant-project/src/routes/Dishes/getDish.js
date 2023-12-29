@@ -25,6 +25,9 @@ export default function getDish(dispatch, navigate, searchedDish) {
             key: 'name',
             align: 'center',
             filteredValue: [searchedDish],
+            ellipsis: {
+                showTitle: false,
+            },
             onFilter: (value, record) => {
                 return (
                     String(record.name).toLowerCase()
@@ -40,6 +43,7 @@ export default function getDish(dispatch, navigate, searchedDish) {
             title: 'Image',
             dataIndex: 'image',
             key: 'description',
+            className: 'dish-image-display',
             align: 'center',
             render: (_, image) =>
                 <img alt="img-food" className="dish-image" src={image.image}/>,
@@ -50,6 +54,7 @@ export default function getDish(dispatch, navigate, searchedDish) {
             dataIndex: 'tags',
             key: 'tags',
             align: 'center',
+            className: 'dish-tags-display',
             render: (tags) => (
                 <>
                     {tags.split(' ').map((tag) => {
@@ -67,6 +72,7 @@ export default function getDish(dispatch, navigate, searchedDish) {
             dataIndex: 'description',
             key: 'description',
             align: 'center',
+            className: 'dish-description-display',
             ellipsis: {
                 showTitle: false,
             },
@@ -75,7 +81,7 @@ export default function getDish(dispatch, navigate, searchedDish) {
             title: 'Price',
             dataIndex: 'price',
             key: 'price',
-            width: 100,
+            className: 'price-display',
             align: 'center',
         },
         {
@@ -85,18 +91,18 @@ export default function getDish(dispatch, navigate, searchedDish) {
             render: (_, dish) => (
                 <Space wrap className="dish-buttons">
                     <Button className="dish-list-button"
-                            danger
-                            onClick={() => onDeleteBtnClick(dish)}>
+                        danger
+                        onClick={() => onDeleteBtnClick(dish)}>
                         <DeleteOutlined />Delete
                     </Button>
                     <Button className="dish-list-button"
-                            onClick={() =>
-                                onEditBtnClick(dish)}>
+                        onClick={() =>
+                            onEditBtnClick(dish)}>
                         <EditOutlined />Edit
                     </Button>
                     <Button className="dish-list-button-details"
-                            onClick={() =>
-                                onDetailBtnClick(dish)}>
+                        onClick={() =>
+                            onDetailBtnClick(dish)}>
                         Read more
                     </Button>
                 </Space>

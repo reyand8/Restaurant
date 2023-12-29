@@ -22,7 +22,7 @@ export default function DishDetails () {
     return (
 
         <Row justify="center">
-            <Col span={8}>
+            <Col span={8} className="dish-details">
                 <Button className="button-style">
                     <Link to="/dishes"><ArrowLeftOutlined /> Return</Link>
                 </Button>
