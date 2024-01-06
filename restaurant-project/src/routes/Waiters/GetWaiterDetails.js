@@ -1,5 +1,6 @@
 import {Button, Card} from 'antd';
 import '../../App.css';
+import {Link} from 'react-router-dom';
 
 export default function GetWaiterDetails({waiterEdit}) {
     return (
@@ -13,9 +14,12 @@ export default function GetWaiterDetails({waiterEdit}) {
                 <p>Address: {waiterEdit.address}</p>
                 <p>Phone: {waiterEdit.phone}</p>
             </div>
-            <Button className="button-style" htmlType="submit">
-                See orders
-            </Button>
+            <Link to="/orders">
+                <Button className="button-style" htmlType="submit">
+                    Orders
+                </Button>
+            </Link>
+
         </Card>
     );
 }
