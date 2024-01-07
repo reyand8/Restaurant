@@ -52,7 +52,7 @@ module.exports.generateMockData = function (seedNum) {
       firstName: faker.person.firstName(),
       lastName: faker.person.lastName(),
       phone: faker.phone.number('###-##-##'),
-      photo: faker.internet.avatar(),
+      photo: faker.image.urlLoremFlickr({ category: 'selfie' }),
       address: faker.location.streetAddress(true),
     }), waitersCount),
     dishes: multiple((id) => ({
