@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "react-scripts start & node ../mock-api-server-main/ npm run start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint -c .eslintrc --ext .js ./src/",
     "lint:fix": "npm run lint -- --fix",
     "dev": "NODE_ENV=development webpack --mode development",
+    "start": "react-scripts start",
+    "start-all": "react-scripts start & node ../mock-api-server-main/ npm run start",
     "webpack-start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
 },
   "author": "",
