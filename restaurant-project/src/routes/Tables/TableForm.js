@@ -60,7 +60,7 @@ export default function TableForm () {
                                 validator(_, value) {
                                     for(let table of list) {
                                         if(table.number === Number(value)) {
-                                            return Promise.reject(new Error('Error! Create a new table!'));
+                                            return Promise.reject(new Error('Error! Create a new table'));
                                         }
                                     }
                                     return Promise.resolve();
@@ -68,11 +68,11 @@ export default function TableForm () {
                             }),
                             {
                                 pattern: TABLE_TEMPLATE,
-                                message: 'Your number is longer then 3 symbols!',
+                                message: 'Error! Your number is longer than 3 symbols',
                             },
                             {
                                 required: true,
-                                message: 'Please input the number!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <Input placeholder="Number"/>

@@ -68,11 +68,11 @@ export default function DishForm () {
                         rules={[
                             {
                                 min: 3,
-                                message: 'Dish name must be longer than 3 symbols!',
+                                message: 'The name of the dish must be longer than 3 symbols',
                             },
                             {
                                 required: true,
-                                message: 'Please input dish name!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <Input placeholder="Name" />
@@ -84,14 +84,14 @@ export default function DishForm () {
                                     let description = value.split(' ');
                                     if(description.length <= 5) {
                                         return Promise.reject(new
-                                        Error('The description must be longer then 5 words!'));
+                                        Error('The description must be longer than 5 words'));
                                     }
                                     return Promise.resolve();
                                 },
                             }),
                             {
                                 required: true,
-                                message: 'Please input dish description!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <TextArea placeholder="Description"/>
@@ -110,11 +110,11 @@ export default function DishForm () {
                         rules={[
                             {
                                 pattern: PRICE_TEMPLATE,
-                                message: 'Dish price must be < 4 symbols',
+                                message: 'The price must be < 4 symbols',
                             },
                             {
                                 required: true,
-                                message: 'Please input dish price!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <Input placeholder="Price" />
@@ -126,18 +126,18 @@ export default function DishForm () {
                                     let tags = value.split(' ');
                                     if(tags.length >= 3) {
                                         return Promise.reject(
-                                            new Error('The tag can not be longer then 2 words!'));
+                                            new Error('The tag can not be longer than 2 words'));
                                     }
                                     return Promise.resolve();
                                 },
                             }),
                             {
                                 required: true,
-                                message: 'Please input dish description!',
+                                message: 'The field is required',
                             },
                             {
                                 max: 10,
-                                message: 'Your tag can not be longer than 10 symbols!',
+                                message: 'Your tag can not be longer than 10 symbols',
                             },
                         ]}>
                         <Input placeholder="Tag" />

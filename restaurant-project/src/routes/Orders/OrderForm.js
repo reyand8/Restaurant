@@ -70,7 +70,7 @@ export default function OrderForm() {
                         rules={[
                             {
                                 required: true,
-                                message: 'Choose a Table!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <Select style={{width: 240}} options={action.table}/>
@@ -79,7 +79,7 @@ export default function OrderForm() {
                         rules={[
                             {
                                 required: true,
-                                message: 'Choose a Waiter!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <Select style={{width: 234}} options={action.waiter}/>
@@ -117,11 +117,11 @@ export default function OrderForm() {
                                             rules={[
                                                 {
                                                     required: true,
-                                                    message: 'Input the count',
+                                                    message: 'The field is required',
                                                 },
                                                 {
                                                     pattern: ORDER_TEMPLATE,
-                                                    message: 'Your number is longer then 3 symbols!',
+                                                    message: 'Your number is longer than 3 symbols',
                                                 },
                                             ]}>
                                             <Input placeholder="Count" />

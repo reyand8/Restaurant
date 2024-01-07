@@ -56,11 +56,26 @@ export default function ContactForm () {
                         rules={[
                             {
                                 min: 4,
-                                message: 'Your name must be longer than 3 symbols!',
+                                message: 'Your name must be longer than 3 symbols',
                             },
                             {
                                 required: true,
-                                message: 'Please input your name!',
+                                message: 'The field is required',
+                            },
+                        ]}>
+                        <Input />
+                    </Form.Item>
+                    <Form.Item
+                        label="Surname"
+                        name="lastName"
+                        rules={[
+                            {
+                                min: 4,
+                                message: 'Your name must be longer than 3 symbols',
+                            },
+                            {
+                                required: true,
+                                message: 'The field is required',
                             },
                         ]}>
                         <Input />
@@ -69,11 +84,11 @@ export default function ContactForm () {
                         rules={[
                             {
                                 pattern: PHONE_TEMPLATE,
-                                message: 'The format must be 000-00-00!',
+                                message: 'The format must be 000-00-00',
                             },
                             {
                                 required: true,
-                                message: 'Please input your phone!',
+                                message: 'The field is required',
                             },
                         ]}>
                         <Input />
