@@ -38,7 +38,7 @@ export default function waiterReducer(state=initialState, {type, payload}) {
     }
     case ACTION_DELETE_WAITER: {
         const newList = state.list.filter(waiter => waiter.id !== payload.id);
-        return {...state, payload: newList};
+        return {...state, list: newList};
     }
     case ACTION_UPDATE_LIST: {
         const updateList = state.list.map(waiter => waiter.id === payload.id ? payload : waiter);
