@@ -7,10 +7,6 @@
     "start": "node index.js",
     "server": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:volodymyr-kryvoshapov/mock-api-server.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
