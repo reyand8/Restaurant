@@ -12,10 +12,11 @@
     "start": "react-scripts start",
     "start-all": "react-scripts start & node ../mock-api-server-main/ npm run start",
     "webpack-start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
-},
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.23.7",
     "@babel/preset-react": "^7.23.3",

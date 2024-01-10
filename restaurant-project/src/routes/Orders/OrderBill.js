@@ -1,7 +1,7 @@
-import { Table, Row, Col, Button, Space } from 'antd';
+import {Table, Row, Col, Button, Space, Spin} from 'antd';
 import {Link, useNavigate, useParams} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { fetchOneBill, deleteOrder, clearBill } from '../../store/actions/order';
 import { selectBill, selectDishes} from '../../store/selectors';
@@ -18,12 +18,6 @@ export default function OrderBill() {
     let { id } = useParams();
     const bill = getBill();
 
-
-    const total = dishArrayOrder.reduce((acc, dish) => {
-        acc += (dish.count * dish.price);
-        return acc;
-    }, 0);
-
     useEffect(() => {
         if (id && !order?.id) {
             dispatch(fetchOneBill(id));
@@ -33,6 +27,12 @@ export default function OrderBill() {
     useEffect(() => {
         dispatch(fetchNewOrders());
     }, [dispatch]);
+
+    const total = dishArrayOrder.reduce((acc, dish) => {
+        acc += (dish.count * dish.price);
+        return acc;
+    }, 0);
+
 
     function getDishArray(orderDishesList, dishList) {
         let allDishes = [];
@@ -61,7 +61,15 @@ export default function OrderBill() {
     }
 
     if (id && !order?.id) {
-        return <h1>Loading...</h1>;
+        return (
+            <div className="data-loading">
+                <Space>
+                    <Spin tip="Loading" size="large">
+                        <div className="loading-information" />
+                    </Spin>
+                </Space>
+            </div>
+        );
     }
 
     return (

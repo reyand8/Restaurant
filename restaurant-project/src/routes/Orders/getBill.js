@@ -10,9 +10,7 @@ export function getBill() {
             dataIndex: 'price',
             key: 'price',
             align: 'center',
-
         },
-
         {
             title: 'Count',
             dataIndex: 'count',
