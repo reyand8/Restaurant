@@ -1,14 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {selectTables} from '../../store/selectors';
-import {Button, Col, Row, Space} from 'antd';
 import { useEffect } from 'react';
 import {Link} from 'react-router-dom';
+import {Button, Col, Row, Space} from 'antd';
+
 import { fetchList } from '../../store/actions/table';
 import GetTable from './getTable';
+import {selectTables} from '../../store/selectors';
+
 
 export default function Tables () {
     const list = useSelector(selectTables);
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(fetchList());
     }, [dispatch]);

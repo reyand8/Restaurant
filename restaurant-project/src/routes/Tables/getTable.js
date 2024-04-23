@@ -1,9 +1,11 @@
-import { EditOutlined, DeleteOutlined}  from '@ant-design/icons';
 import {useNavigate} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
+
 import {Button, Card} from 'antd';
+import { EditOutlined, DeleteOutlined}  from '@ant-design/icons';
 import {deleteTable, createEditTable} from '../../store/actions/table';
 import '../../App.css';
+
 export default function GetTable({table}) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
