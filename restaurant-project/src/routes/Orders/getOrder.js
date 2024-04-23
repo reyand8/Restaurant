@@ -1,6 +1,7 @@
 import { Button, Space } from 'antd';
 import {clearBill, clearEditOrder} from '../../store/actions/order';
 import '../../App.css';
+
 export function getOrder (dispatch, navigate) {
     function onBillBtnClick(order) {
         navigate(`/orders/${order.id}/bill`);

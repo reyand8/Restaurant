@@ -1,12 +1,14 @@
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { selectAllOrders } from '../../store/selectors';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Table, Button } from 'antd';
-import { useEffect } from 'react';
 
+import { selectAllOrders } from '../../store/selectors';
 import { getOrder } from './getOrder';
 import { fetchCommonOrders } from '../../store/actions/common';
 import '../../App.css';
+
 export default function OrderList () {
     const dispatch = useDispatch();
     const navigate = useNavigate();

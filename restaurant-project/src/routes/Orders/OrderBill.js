@@ -8,6 +8,7 @@ import { selectBill, selectDishes} from '../../store/selectors';
 import { fetchNewOrders } from '../../store/actions/common';
 import { getBill } from './getBill';
 import '../../App.css';
+
 export default function OrderBill() {
     const dispatch = useDispatch();
     const navigate = useNavigate();

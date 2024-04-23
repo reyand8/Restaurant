@@ -8,8 +8,11 @@ import { selectOrderEdit, selectAction } from '../../store/selectors';
 import { fetchNewOrders } from '../../store/actions/common';
 import { save, fetchOne } from '../../store/actions/order';
 import '../../App.css';
+
 const { Option } = Select;
+
 const ORDER_TEMPLATE = /^\d{1,3}$/;
+
 export default function OrderForm() {
     const [form] = Form.useForm();
     let { id } = useParams();
