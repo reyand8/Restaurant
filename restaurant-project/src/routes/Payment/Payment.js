@@ -3,7 +3,6 @@ import {Space, Spin} from 'antd';
 import '../../App.css';
 
 
-
 export default function Payment() {
     return (
         <div className="data-loading">
