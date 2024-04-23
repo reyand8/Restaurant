@@ -10,38 +10,58 @@ export const ACTION_CLEAR_EDIT_WAITER ='ACTION_CLEAR_EDIT_WAITER';
 
 export function fetchList() {
     return (dispatch) => {
-        WaiterApi.getList().then((serverList) => {
-            dispatch(setWaiterList(serverList));
-        });
+        WaiterApi.getList()
+            .then((serverList) => {
+                dispatch(setWaiterList(serverList));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function fetchOne(id) {
     return (dispatch) => {
-        WaiterApi.getOne(id).then((waiter) => {
-            dispatch(createEditWaiter(waiter));
-        });
+        WaiterApi.getOne(id)
+            .then((waiter) => {
+                dispatch(createEditWaiter(waiter));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function deleteWaiter(waiter) {
     return (dispatch) => {
-        WaiterApi.delete(waiter.id).then(() => {
-            dispatch(remove(waiter));
-        });
+        WaiterApi.delete(waiter.id)
+            .then(() => {
+                dispatch(remove(waiter));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function save(waiter) {
     return (dispatch) => {
         if(waiter.id) {
-            WaiterApi.update(waiter.id, waiter).then((waiter) => {
-                dispatch(updateList(waiter));
-            });
+            WaiterApi.update(waiter.id, waiter)
+                .then((waiter) => {
+                    dispatch(updateList(waiter));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         } else {
-            WaiterApi.create(waiter).then((serverWaiter) => {
-                dispatch(create(serverWaiter));
-            });
+            WaiterApi.create(waiter)
+                .then((serverWaiter) => {
+                    dispatch(create(serverWaiter));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     };
 }

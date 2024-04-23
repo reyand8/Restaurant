@@ -30,38 +30,58 @@ export function fetchOne(id) {
 
 export function deleteOrder(order) {
     return (dispatch) => {
-        OrderApi.delete(order.id).then(() => {
-            dispatch(remove(order));
-        });
+        OrderApi.delete(order.id)
+            .then(() => {
+                dispatch(remove(order));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function fetchOneBill(id) {
     return (dispatch) => {
-        OrderApi.getOne(id).then((order) => {
-            dispatch(setBill(order));
-        });
+        OrderApi.getOne(id)
+            .then((order) => {
+                dispatch(setBill(order));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function fetchListBill(id) {
     return (dispatch) => {
-        OrderApi.getList(id).then((order) => {
-            dispatch(setBill(order));
-        });
+        OrderApi.getList(id)
+            .then((order) => {
+                dispatch(setBill(order));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function save(order) {
     return (dispatch) => {
         if(order.id) {
-            OrderApi.update(order.id, order).then((order) => {
-                dispatch(updateList(order));
-            });
+            OrderApi.update(order.id, order)
+                .then((order) => {
+                    dispatch(updateList(order));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         } else {
-            OrderApi.create(order).then((serverOrder) => {
-                dispatch(create(serverOrder));
-            });
+            OrderApi.create(order)
+                .then((serverOrder) => {
+                    dispatch(create(serverOrder));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     };
 

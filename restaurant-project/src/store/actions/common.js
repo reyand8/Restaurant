@@ -17,6 +17,8 @@ export function fetchCommonOrders () {
             dispatch(setOrderList(res[0]));
             dispatch(setTableList(res[1]));
             dispatch(setWaiterList(res[2]));
+        }).catch((error) => {
+            console.log(error);
         });
     };
 }
@@ -32,6 +34,9 @@ export function fetchNewOrders() {
                 dispatch(setTableList(res[0]));
                 dispatch(setWaiterList(res[1]));
                 dispatch(setDishList(res[2]));
+            })
+            .catch((error) => {
+                console.log(error);
             });
     };
 }

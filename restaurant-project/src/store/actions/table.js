@@ -10,38 +10,58 @@ export const ACTION_CLEAR_EDIT_TABLE ='ACTION_CLEAR_EDIT_TABLE';
 
 export function fetchList() {
     return (dispatch) => {
-        TableApi.getList().then((serverList) => {
-            dispatch(setTableList(serverList));
-        });
+        TableApi.getList()
+            .then((serverList) => {
+                dispatch(setTableList(serverList));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function fetchOne(id) {
     return (dispatch) => {
-        TableApi.getOne(id).then((table) => {
-            dispatch(createEditTable(table));
-        });
+        TableApi.getOne(id)
+            .then((table) => {
+                dispatch(createEditTable(table));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function deleteTable(table) {
     return (dispatch) => {
-        TableApi.delete(table.id).then(() => {
-            dispatch(remove(table));
-        });
+        TableApi.delete(table.id)
+            .then(() => {
+                dispatch(remove(table));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function save(table) {
     return (dispatch) => {
         if(table.id) {
-            TableApi.update(table.id, table).then((table) => {
-                dispatch(updateList(table));
-            });
+            TableApi.update(table.id, table)
+                .then((table) => {
+                    dispatch(updateList(table));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         } else {
-            TableApi.create(table).then((serverTable) => {
-                dispatch(create(serverTable));
-            });
+            TableApi.create(table)
+                .then((serverTable) => {
+                    dispatch(create(serverTable));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     };
 }

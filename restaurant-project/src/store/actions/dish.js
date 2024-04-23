@@ -11,38 +11,59 @@ export const ACTION_CLEAR_EDIT_DISH ='ACTION_CLEAR_EDIT_DISH';
 
 export function fetchList() {
     return (dispatch) => {
-        DishApi.getList().then((serverList) => {
-            dispatch(setDishList(serverList));
-        });
+        DishApi.getList()
+            .then((serverList) => {
+                dispatch(setDishList(serverList));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function fetchOne(id) {
     return (dispatch) => {
-        DishApi.getOne(id).then((dish) => {
-            dispatch(createEditDish(dish));
-        });
+        DishApi.getOne(id)
+            .then((dish) => {
+                dispatch(createEditDish(dish));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
     };
 }
 
 export function deleteDish(dish) {
     return (dispatch) => {
-        DishApi.delete(dish.id).then(() => {
-            dispatch(remove(dish));
-        });
+        DishApi.delete(dish.id)
+            .then(() => {
+                dispatch(remove(dish));
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 }
 
 export function save(dish) {
     return (dispatch) => {
         if(dish.id) {
-            DishApi.update(dish.id, dish).then((dish) => {
-                dispatch(updateList(dish));
-            });
+            DishApi.update(dish.id, dish)
+                .then((dish) => {
+                    dispatch(updateList(dish));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         } else {
-            DishApi.create(dish).then((serverTable) => {
-                dispatch(create(serverTable));
-            });
+            DishApi.create(dish)
+                .then((serverTable) => {
+                    dispatch(create(serverTable));
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     };
 }
