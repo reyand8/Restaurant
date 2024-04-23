@@ -1,10 +1,12 @@
 import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 import {useEffect, useState} from 'react';
+
+import {Button, Col, Row, Table, Input} from 'antd';
+
 import {selectDishes} from '../../store/selectors';
 import getDish from './getDish';
 import {fetchList} from '../../store/actions/dish';
-import {Button, Col, Row, Table, Input} from 'antd';
 import '../../App.css';
 
 
@@ -14,6 +16,7 @@ export default function DishList() {
     const list = useSelector(selectDishes);
     const [searchedDish, setSearchedDish] = useState('');
     const dishColumns = getDish(dispatch, navigate, searchedDish);
+
     useEffect(() => {
         dispatch(fetchList());
     }, [dispatch]);

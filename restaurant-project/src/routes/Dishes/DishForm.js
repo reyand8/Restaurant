@@ -1,16 +1,16 @@
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {Button, Row, Col, Form, Input, Upload, Space, Spin} from 'antd';
-import React, { useEffect } from 'react';
+import {PlusOutlined} from '@ant-design/icons';
 
 import {fetchOne, save} from '../../store/actions/dish';
 import { selectDishEdit} from '../../store/selectors';
 import '../../App.css';
-import {PlusOutlined} from '@ant-design/icons';
+
 const { TextArea } = Input;
 
 const PRICE_TEMPLATE = /^\d{1,3}$/;
-
 
 
 export default function DishForm () {
@@ -18,8 +18,6 @@ export default function DishForm () {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     let { id } = useParams();
-
-
 
     useEffect(() => {
         if (id && !dishEdit?.id) {

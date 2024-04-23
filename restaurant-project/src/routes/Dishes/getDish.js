@@ -3,16 +3,19 @@ import { EditOutlined, DeleteOutlined}  from '@ant-design/icons';
 import {deleteDish, createEditDish, clearEditDish} from '../../store/actions/dish';
 import '../../App.css';
 import './DishList';
-export default function getDish(dispatch, navigate, searchedDish) {
 
+
+export default function getDish(dispatch, navigate, searchedDish) {
 
     function onDeleteBtnClick(dish) {
         dispatch(deleteDish(dish));
     }
+
     function onEditBtnClick(dish) {
         dispatch(createEditDish(dish));
         navigate(`/dishes/${dish.id}/edit/`);
     }
+
     function onDetailBtnClick(dish){
         dispatch(clearEditDish());
         navigate(`/dishes/${dish.id}/details/`);
@@ -107,7 +110,6 @@ export default function getDish(dispatch, navigate, searchedDish) {
                     </Button>
                 </Space>
             ),
-
         },
     ];
 }

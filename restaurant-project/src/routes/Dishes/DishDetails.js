@@ -1,11 +1,12 @@
+import { useEffect } from 'react';
 import {Link, useParams} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {Row, Col, Space, Button} from 'antd';
-import { useEffect } from 'react';
+import { ArrowLeftOutlined}  from '@ant-design/icons';
+
 import GetDetails from './GetDetails';
 import {fetchOne} from '../../store/actions/dish';
 import {selectDishEdit} from '../../store/selectors';
-import { ArrowLeftOutlined}  from '@ant-design/icons';
 import '../../App.css';
 
 
@@ -13,6 +14,7 @@ export default function DishDetails () {
     const dishEdit = useSelector(selectDishEdit);
     const dispatch = useDispatch();
     const {id} = useParams();
+
     useEffect(() => {
         if (id && !dishEdit?.id) {
             dispatch(fetchOne(id));
@@ -20,7 +22,6 @@ export default function DishDetails () {
     }, [dispatch, id, dishEdit?.id]);
 
     return (
-
         <Row justify="center">
             <Col span={8} className="dish-details">
                 <Button className="button-style">

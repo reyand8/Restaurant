@@ -3,7 +3,10 @@ import { PlusOutlined } from '@ant-design/icons';
 import { TweenOneGroup } from 'rc-tween-one';
 import { Input, Tag, theme } from 'antd';
 import {useSelector} from 'react-redux';
+
 import {selectDishEdit} from '../../store/selectors';
+
+
 const DishFormTags = () => {
     const { token } = theme.useToken();
     const dishEdit = useSelector(selectDishEdit);
@@ -12,21 +15,26 @@ const DishFormTags = () => {
     const [inputVisible, setInputVisible] = useState(false);
     const [inputValue, setInputValue] = useState('');
     const inputRef = useRef(null);
+
     useEffect(() => {
         if (inputVisible) {
             inputRef.current?.focus();
         }
     }, [inputVisible]);
+
     const handleClose = (removedTag) => {
         const newTags = tags.filter((tag) => tag !== removedTag);
         setTags(newTags);
     };
+
     const showInput = () => {
         setInputVisible(true);
     };
+
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
+
     const handleInputConfirm = () => {
         if (inputValue && tags.indexOf(inputValue) === -1) {
             setTags([...tags, inputValue]);
@@ -34,6 +42,7 @@ const DishFormTags = () => {
         setInputVisible(false);
         setInputValue('');
     };
+
     const forMap = (tag) => {
         const tagElem = (
             <Tag color="cyan" closable onClose={(e) => {
@@ -48,11 +57,14 @@ const DishFormTags = () => {
             </span>
         );
     };
+
     const tagChild = tags.map(forMap);
+
     const tagPlusStyle = {
         background: token.colorBgContainer,
         borderStyle: 'dashed',
     };
+
     return (
         <>
             <div style={{marginBottom: 16}}>
@@ -99,4 +111,5 @@ const DishFormTags = () => {
         </>
     );
 };
+
 export default DishFormTags;
