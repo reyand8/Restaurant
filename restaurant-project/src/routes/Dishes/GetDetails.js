@@ -3,7 +3,7 @@ import '../../App.css';
 
 export default function GetDish({dishEdit}) {
 
-    const {name, description, price, image, tags} = dishEdit
+    const {name, description, price, image, tags} = dishEdit;
 
     return (
         <Card

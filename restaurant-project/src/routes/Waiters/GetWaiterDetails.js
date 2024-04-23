@@ -5,7 +5,7 @@ import {Button, Card} from 'antd';
 import '../../App.css';
 
 export default function GetWaiterDetails({waiterEdit}) {
-    const {firstName, lastName, photo, address, phone} = waiterEdit
+    const {firstName, lastName, photo, address, phone} = waiterEdit;
     return (
         <Card size="big"
             title={ <div className="waiter-details-fullname">
