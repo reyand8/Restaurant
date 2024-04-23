@@ -1,6 +1,9 @@
-import {deleteWaiter, clearEditWaiter} from '../../store/actions/waiter';
 import {DeleteOutlined, DownOutlined, EditOutlined} from '@ant-design/icons';
 import {Button, Dropdown, Space} from 'antd';
+
+import {deleteWaiter, clearEditWaiter} from '../../store/actions/waiter';
+
+
 export function getWaiter(dispatch, navigate) {
     function onDeleteClick(waiter) {
         dispatch(deleteWaiter(waiter));

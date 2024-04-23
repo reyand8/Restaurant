@@ -1,10 +1,13 @@
+import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+
 import {Button, Row, Col, Form, Input, Space, Spin} from 'antd';
-import React, { useEffect } from 'react';
+
 import {fetchOne, save} from '../../store/actions/waiter';
 import {selectWaiterEdit} from '../../store/selectors';
 import '../../App.css';
+
 const PHONE_TEMPLATE = /^\d{3}-\d{2}-\d{2}$/;
 
 export default function ContactForm () {
@@ -12,6 +15,7 @@ export default function ContactForm () {
     let { id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
     useEffect(() => {
         if (id && !waiterEdit?.id) {
             dispatch(fetchOne(id));

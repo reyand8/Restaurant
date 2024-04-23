@@ -1,17 +1,19 @@
 import {useDispatch, useSelector} from 'react-redux';
-import {selectWaiterEdit} from '../../store/selectors';
 import {Link, useParams} from 'react-router-dom';
 import {useEffect} from 'react';
-import {fetchOne} from '../../store/actions/waiter';
+
 import {Button, Col,Row, Space} from 'antd';
 import {ArrowLeftOutlined} from '@ant-design/icons';
+
 import GetWaiterDetails from './GetWaiterDetails';
+import {fetchOne} from '../../store/actions/waiter';
+import {selectWaiterEdit} from '../../store/selectors';
 
 export default function WaiterDetails () {
     const waiterEdit = useSelector(selectWaiterEdit);
     let { id } = useParams();
-
     const dispatch = useDispatch();
+
     useEffect(() => {
         if (id && !waiterEdit?.id) {
             dispatch(fetchOne(id));
