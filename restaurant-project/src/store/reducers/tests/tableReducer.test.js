@@ -22,7 +22,7 @@ describe('tableReducer', () => {
     const tableTestList = [
         { id: 1, number: '11' },
         { id: 2, number: '22' },
-    ]
+    ];
 
     test('should return initial state', () => {
         expect(tableReducer(undefined, {})).toEqual(initialState);
@@ -64,7 +64,7 @@ describe('tableReducer', () => {
     test('should handle ACTION_DELETE_TABLE', () => {
         const stateWithList = {
             ...initialState,
-            list: tableTestList
+            list: tableTestList,
         };
         const action = { type: ACTION_DELETE_TABLE, payload: {id: 1}};
         const expectedState = {
@@ -78,7 +78,7 @@ describe('tableReducer', () => {
     test('should handle ACTION_UPDATE_LIST table', () => {
         const stateWithList = {
             ...initialState,
-            list: tableTestList
+            list: tableTestList,
         };
         const updateTable =  { id: 1, number: '31' };
         const action = { type: ACTION_UPDATE_LIST, payload: updateTable};
